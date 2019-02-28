@@ -14,11 +14,11 @@ describe( "Polygon", () => {
   } )
 
   it( "Polygon has a count getter method that sets the count of the sides of the polygon", () => {
-    expect( polygon.getCount ).to.eq( 3 )
+    expect( polygon.getCount() ).to.eq( 3 )
   } )
 
   it( "Polygon has a perimeter getter that calculates perimeter", () => {
-    expect( polygon.perimeter ).to.eq( 15 )
+    expect( polygon.perimeter() ).to.eq( 15 )
   } )
 } )
 
@@ -33,15 +33,15 @@ describe( "Triangle", () => {
     triangle = new Triangle( [ 5, 5, 5 ] )
     triangle2 = new Triangle( [ 15, 10, 1 ] )
 
-    expect( triangle.count ).to.eq( 3 )
+    expect( triangle.getCount() ).to.eq( 3 )
 
-    expect( triangle.isValid ).to.be.true
-    expect( triangle2.isValid ).to.be.false
+    expect( triangle.isValid() ).to.be.true
+    expect( triangle2.isValid() ).to.be.false
   } )
 
   it( "has a perimeter getter inherited from Polygon", () => {
-    expect( triangle.perimeter ).to.eq( 15 )
-    expect( triangle2.perimeter ).to.eq( 26 )
+    expect( triangle.perimeter() ).to.eq( 15 )
+    expect( triangle2.perimeter() ).to.eq( 26 )
   } )
 } )
 
@@ -54,21 +54,21 @@ describe( "Square", () => {
   it( "has a perimeter getter inherited from Polygon", () => {
     var square = new Square( [ 5, 5, 5, 5 ] )
 
-    expect( square.perimeter ).to.eq( 20 )
+    expect( square.perimeter() ).to.eq( 20 )
   } )
 
   it( "calculates the area", () => {
     var square = new Square( [ 5, 5, 5, 5 ] )
 
-    expect( square.area ).to.eq( 25 )
+    expect( square.area() ).to.eq( 25 )
   } )
 
   it( "checks for valid square", () => {
     var square = new Square( [ 5, 5, 5, 5 ] )
     var square2 = new Square( [ 5, 4, 3, 2 ] )
 
-    expect( square.count ).to.eq( 4 )
-    expect( square.isValid ).to.be.true
-    expect( square2.isValid ).to.be.false
+    expect( square.getCount() ).to.eq( 4 )
+    expect( square.isValid() ).to.be.true
+    expect( square2.isValid() ).to.be.false
   } )
 } )
